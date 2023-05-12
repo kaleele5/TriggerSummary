@@ -1,0 +1,20 @@
+{
+    "OrchestratorUrl": "https://orchestrator-green.services.e5.ai",
+    "OrchestratorLoginAsset": "TestAPIAsset",
+    "Retries": 10,
+    "TriggerStatus" : "false",
+    "DisabledTriggerFilter" : "/odata/ProcessSchedules?$filter=((Enabled%20eq%20false))&$orderby=Name%20asc",
+    "TriggerType" : "",
+    "SlackSecretKey" : "SlackAPI_Token",
+    "PostSlackMessage" : "true",
+    "PipedreamURL" : "https://hooks.slack.com/services/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",
+    "Client" : "Trigger Summary",
+    "SlackChannelId" : "C051ZV7CTB7",
+    "ErrorMessage" : 
+    {
+        "E001" : "Unable to login",
+        "E002" : "There is no trigger available",
+        "E003" : "Trigger Summary Failed Due To Technical Reason",
+        "E004" : "Failed To Send Slack Message"
+    }
+}

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:eue="clr-namespace:Element5_Core.Utils.Exception;assembly=Element5.Core" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.ConfigName="TriggerSummary.json" this:Main.TemplateFileName="summary-template.xlsx" this:Main.StorageBucketName="TriggerSummary" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:eue="clr-namespace:Element5_Core.Utils.Exception;assembly=Element5.Core" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ucas="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="The Config Name In Orchestrator" Name="ConfigName" Type="InArgument(x:String)">
       <x:Property.Attributes>
@@ -19,7 +19,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1732,3200</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1732,3201</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -96,10 +96,9 @@
       <AssemblyReference>Element5.Core</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1216,3135" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1216,3136" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="FlowConfigText" />
       <Variable x:TypeArguments="njl:JObject" Name="FlowConfigSTR" />
@@ -148,7 +147,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Throw Exception" sap:VirtualizedContainerService.HintSize="450,366" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence DisplayName="Throw Exception" sap:VirtualizedContainerService.HintSize="450,376" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -260,7 +259,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <If sap2010:Annotation.AnnotationText="True - Capture the Trigger Summary  Sheet as image and post the image as message in slack&#xA;False - logging as &quot;There is no need to post slack message&quot;" Condition="[FlowConfigSTR(&quot;PostSlackMessage&quot;).ToString.ToLower.Equals(&quot;true&quot;)]" DisplayName="If - Checking Whether Post slack message or not" sap:VirtualizedContainerService.HintSize="1154,966" sap2010:WorkflowViewState.IdRef="If_3">
+    <If sap2010:Annotation.AnnotationText="True - Capture the Trigger Summary  Sheet as image and post the image as message in slack&#xA;False - logging as &quot;There is no need to post slack message&quot;" Condition="[FlowConfigSTR(&quot;PostSlackMessage&quot;).ToString.ToLower.Equals(&quot;true&quot;)]" DisplayName="If - Checking Whether Post slack message or not" sap:VirtualizedContainerService.HintSize="1154,967" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

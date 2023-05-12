@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="test" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1732,771" sap2010:WorkflowViewState.IdRef="test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="test" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1732,867" sap2010:WorkflowViewState.IdRef="test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -51,6 +51,7 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="test" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -61,9 +62,15 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Main.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Main.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="ConfigName">TriggerSummary.json</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="StorageBucketName">DisabledTrigger</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="TemplateFileName">summary-template.xlsx</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="ConfigName">
+          <Literal x:TypeArguments="x:String">TriggerSummary.json</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="StorageBucketName">
+          <Literal x:TypeArguments="x:String">TriggerSummary</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="TemplateFileName">
+          <Literal x:TypeArguments="x:String">summary-template.xlsx</Literal>
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

@@ -366,21 +366,6 @@
         }
       }
     ],
-    "UiPath.Core.Activities.TimeTrigger": [
-      {
-        "Type": "TimeTrigger",
-        "Arguments": {
-          "TimeZone": {
-            "Value": "TimeZone",
-            "ValueSource": "Property"
-          },
-          "CronExpression": {
-            "Value": "CronExpression",
-            "ValueSource": "Property"
-          }
-        }
-      }
-    ],
     "UiPath.Core.Activities.WaitQueueItem": [
       {
         "Type": "queue",

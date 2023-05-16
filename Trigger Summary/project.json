@@ -7,15 +7,14 @@
     "ExcelRangeToImage.Activities": "[1.0.0]",
     "UiPath.Excel.Activities": "[2.20.1]",
     "UiPath.Slack.Activities": "[1.0.3]",
-    "UiPath.System.Activities": "[23.4.2]",
-    "UiPath.Testing.Activities": "[23.4.0]",
-    "UiPath.WebAPI.Activities": "[1.16.2]"
+    "UiPath.System.Activities": "[21.10.3]",
+    "UiPath.WebAPI.Activities": "[1.6.0]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.0.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.0-alpha.6",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -23,7 +22,6 @@
     "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
-    "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
       "*password*"
@@ -31,8 +29,7 @@
     "executionType": "Workflow",
     "readyForPiP": false,
     "startsInPiP": false,
-    "mustRestoreAllDependencies": true,
-    "pipType": "ChildSession"
+    "mustRestoreAllDependencies": true
   },
   "designOptions": {
     "projectProfile": "Developement",
